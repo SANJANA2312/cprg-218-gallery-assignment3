@@ -1,0 +1,157 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*mobile first approach*/
+body {
+    background-color: #cccccc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #120323;
+    text-align: center;
+    padding: 0.5rem;
+
+}
+
+
+nav{
+    width: 95%;
+}
+nav ul {
+    list-style: none;
+    text-decoration: none;
+    
+}
+
+nav ul li {
+    text-align: center;
+    margin: 1rem ;
+    background-color: #d9043d;
+    border: 2px solid #97bf04;
+    padding: 0.5rem;
+    
+}
+
+nav ul li a  {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 0.5rem;
+
+}
+
+h1 { /*nature's lens*/
+    color: #97bf04;
+    text-align: center;
+    padding: 1rem;
+
+}
+main { 
+    padding:2rem;
+   
+}
+
+h2 {/*2024 in review*/
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+img {
+    display:block;
+    margin: auto;
+   
+}
+
+#gallery-container {
+    display: grid;
+    gap:1rem;
+    
+    
+
+}
+ 
+figure{
+    background-color: #ffffff;
+    width: 100%;
+    padding: 2rem;
+    
+}
+
+figure img {
+    border-bottom: 10px solid #97bf04;
+    width:100%;
+    max-width: 650px;
+}
+
+h3 {
+   margin:1rem auto;
+}
+
+
+footer {
+   
+    text-align: center;
+    background-color: #d9043d;
+    padding: 1.5rem;
+    color: white;
+    
+}
+
+/*For devices less than 1000px wide
+The navigation should be a pink bar that takes up 100% the width of the screen with the links centered inside the nav bar
+The photo gallery should be two columns
+The last image in the gallery (tiger) should span two columns*/
+
+@media screen and (min-width: 768px) { 
+    #gallery-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+    header{
+        
+        padding: 0.5rem 0rem 0rem 0rem;
+    }
+    nav {
+        width: 100%;
+        padding:0;
+        margin:0;
+    }
+    nav ul {
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        background-color: #d9043d;
+        list-style: none;
+        margin: 0;
+    }
+    nav ul li {
+        padding: 0;
+        border: none;
+    }
+    nav ul li a {
+        padding: 0;
+    }
+
+    figure:last-of-type {
+        grid-column: span 2;
+    }
+
+}
+
+/*For devices greater than 1000px wide
+The navigation should be a pink bar that takes up 100% the width of the screen with the links centered inside the nav bar
+The photo gallery should be three columns
+The last image in the gallery (tiger) should span two columns*/
+
+ @media screen and (min-width: 1000px) {
+    #gallery-container{
+        grid-template-columns: 1fr 1fr 1fr;
+       
+    }
+ }
